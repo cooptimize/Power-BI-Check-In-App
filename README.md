@@ -33,6 +33,7 @@ Once the environment is created, the Users who will manage App updates need adde
 
 ## App Registration
 https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps
+
 The App Registration allows Power Automate to use the Power BI API.
 
 
