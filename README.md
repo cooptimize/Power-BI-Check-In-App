@@ -31,5 +31,7 @@ Everything else can use default settings.
 Once the environment is created, the Users who will manage App updates need added as System Adminstrator of the Environment (**Environment > Users See All > Add user**)
 
 ## App Registration
+https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps
 The App Registration allows Power Automate to use the Power BI API.
+
 
