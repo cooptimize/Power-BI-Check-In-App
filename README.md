@@ -21,8 +21,9 @@ You will need help from a Tenant Admin to get the App installed. The following c
 A SharePoint site stores the .pbix files. Access the files via the OneDrive sync client so they automatically upload to SharePoint.
 
 ## Power App Environment
+Creating a new environment isn't mandatory. But for an app like this, it's the simplest method.
 https://admin.powerplatform.microsoft.com/environments
-1. Create a **+New+** environment.
+1. Create a **+New** environment.
 2. Suggested **Name** "Power BI App".
 3. **Type** "Production".
 4. **Create a database for this environment** - Yes.
