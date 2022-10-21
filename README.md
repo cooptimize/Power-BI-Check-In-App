@@ -1,7 +1,24 @@
 # Overview
-The Power BI Checkin App expedites publishing Power BI content, deploying through Pipelines, and tracking changes. The Power App sits inside Power BI Desktop.
+The Power BI Checkin App expedites publishing Power BI content, deploying through Pipelines, and tracking changes.
 
-<img width="1514" alt="image" src="https://user-images.githubusercontent.com/105446443/196832639-6f8bd359-9376-44ae-acaa-877018865426.png">
+<img width="1514" alt="image" src="https://user-images.githubusercontent.com/105446443/197231484-1cc0070d-6dd1-4fd2-bcd2-d3902282862a.png">
+
+## Inside Power BI Desktop
+The best part of this App is it sits inside Power BI Desktop - right where you are authoring Reports or Data Models. When you are finished making changes, you don't need to login somewhere else to document what changed.
+
+You can also view the Change History inside the .pbix file.
+
+## Tie SharePoint File to Workspace
+One of the annoying parts of the existing Power BI Publishing experience is constantly having to select the Workspace to Publish to. We can get around that annoyance by putting the Workspace Id as the SharePoint Title field. We use this link to automate the Publish process.
+
+## Simplify Pipelines
+Pipelines are a great way to be able to Test changes before they are promoted to Production. However, this has an unwanted side effect - making a quick change to a Report or Measure can be overly cumbersome. The Power BI App solves this by optionally automating Pipeline promotion steps.
+
+## No Report when Publishing a Dataset
+With the API, we can publish only a Data Model without publishing the report.
+
+## Links to PowerBI.com
+By knowing which Workspace the .pbix file is linked to and the Name of the .pbix file, other Metadata can be gathered. The App has direct links to the Workspace, Pipeline, Dataset, and Report making it much faster to view content after publishing.
 
 # Installation Requirements
 You will need help from a Tenant Admin to get the App installed. The following components are required to setup the app:
@@ -15,6 +32,7 @@ You will need help from a Tenant Admin to get the App installed. The following c
 | Create Azure Key Vault | Stores the Secret from the App Registration | Azure Resource Group Owner or Azure Administrator |
 | (Optional) Azure AD Group | To manage API and App Access | Azure Active Directory |
 | Install Power App | App and Power Automate components | Power App Environment System Administrator |
+| Integrate with Power BI Content | Embed the app directly inside of Power BI Desktop | Power BI Publish |
 
 # Installation Steps
 
@@ -80,4 +98,22 @@ The person installing the app needs to know some values from Azure.
 * Secret Name (eg "PowerBIAPI")
 
 ## (Optional) Azure AD Group
+The AD Group could be more specific to this App, or tied into existing Power BI Groups.
 
+Suggested AD Group Name: "Power BI App"
+
+Members:
+* Users who will Publish Power BI content
+* The Power BI API App Registration
+
+Group Assignments:
+* Key Vault Access policies
+* Power App - App level permissions
+* (Optional) Power BI Workspaces and Pipelines (Member level)
+
+## Power App Installation
+https://make.powerapps.com/environments
+
+1. Navigate to the Power Apps Authoring site (https://make.powerapps.com/environments).
+2. At the very top of the page is an **Environment** selector. Select the Power BI App Environment.
+3. Navigate to **Solutions** and **Import**.
