@@ -1,5 +1,5 @@
 # Overview
-The Power BI Checkin App expedites publishing Power BI content, deploying through Pipelines, and tracking changes.
+The Power BI Checkin Power App expedites publishing Power BI content, deploying through Pipelines, and tracking changes.
 
 <img width="1514" alt="image" src="https://user-images.githubusercontent.com/105446443/197231484-1cc0070d-6dd1-4fd2-bcd2-d3902282862a.png">
 
