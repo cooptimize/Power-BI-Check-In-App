@@ -27,13 +27,30 @@ https://admin.powerplatform.microsoft.com/environments
 2. Suggested **Name** "Power BI App".
 3. **Type** "Production".
 4. **Create a database for this environment** - Yes.
-Everything else can use default settings.
+5. Other settings can be the default settings.
 
-Once the environment is created, the Users who will manage App updates need added as System Adminstrator of the Environment (**Environment > Users See All > Add user**)
+Once the environment is created, the Users who will manage App updates are added as System Adminstrator of the Environment (**Environment > Users See All > Add user**).
 
 ## App Registration
 https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps
 
-The App Registration allows Power Automate to use the Power BI API.
+The App Registration allows Power Automate to use the Power BI API. Giving access here is only one part of the security puzzle. The App Registration "user" must be given appropriate permissions to any Power BI Workspace, Pipeline, or App to perform API related functions.
 
+1. Create a **+New** App Registration. Suggested name "Power BI API".
+2. Click **API Permissions** then **+Add a Permission**.
+3. Search for the Power BI Service and add: 
+>* App.Read.All
+>* Dashboard.Read.All
+>* Dataflow.Read.All
+>* Dataset.ReadWrite.All
+>* Pipeline.Deploy
+>* Report.ReadWrite.All
+>* Workspace.Read.All
+4. Click **Certificates & Secrets** then **+New Client Secret**. Suggested **Description** "Power BI API" **Expires** 24 months.
+5. You only get one chance to copy the secret. Paste it in your password manager - it will be required in the next step.
 
+## Register Provider for Azure Subscription
+https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
+The Power Apps provider is off by default on an Azure Subscription. It needs to be on for the Subscription the Key Vault will use.
+
+1. 
