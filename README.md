@@ -29,6 +29,7 @@ You will need help from a Tenant Admin to get the App installed. The following c
 |---|---|---|
 | SharePoint Site or Team | Stores .pbix files so they can be published to PowerBI.com | Ability to Create Team or SharePoint Site |
 | Power App Environment | Install App and related components | Power Platform Admin |
+| Power App Per User Licenses | The App requires a license, as it uses some premium components | Microsoft Billing Administrator and Power Platform Admin|
 | App Registration | Access to the Power BI API | Azure Active Directory |
 | Register Provider for Azure Subscription | Needed for Power App to retreive the Key Vault | Subscription Owner |
 | Create Azure Key Vault | Stores the Secret from the App Registration | Azure Resource Group Owner or Azure Administrator |
