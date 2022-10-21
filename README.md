@@ -17,8 +17,10 @@ Pipelines are a great way to be able to Test changes before they are promoted to
 ## No Report when Publishing a Dataset
 With the API, we can publish only a Data Model without publishing the report.
 
+The App checks if a Dataset is published but a Report with the same name is not published (because you manually deleted it from PowerBI.com after the 1st publish).
+
 ## Links to PowerBI.com
-By knowing which Workspace the .pbix file is linked to and the Name of the .pbix file, other Metadata can be gathered. The App has direct links to the Workspace, Pipeline, Dataset, and Report making it much faster to view content after publishing.
+Within the .pbix file, we know 1) the File Name and 2) the Workspace Id. From these two data points the App can retreive other Metadata. The App has direct links to the Workspace, Pipeline, Dataset, and Report. These links mean you can quickly view content after publishing.
 
 # Installation Requirements
 You will need help from a Tenant Admin to get the App installed. The following components are required to setup the app:
