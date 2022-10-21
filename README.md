@@ -70,12 +70,14 @@ The App Registration allows Power Automate to use the Power BI API. Giving acces
 
 ## Register Provider for Azure Subscription
 https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
+
 The Power Apps provider is off by default on an Azure Subscription. It needs to be on for the Subscription the Key Vault will use. This allows a Power App to communicate with a Key Vault.
 
 1. Click on **Resource providers** then **Filter by name...** "Microsoft.PowerPlatform". **Register**
 
 ## Create Azure Key Vault
 https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults
+
 A Key Vault allows a User to to retreive a secret without knowing the secret. Key Vaults may incur Azure Fees - for this App it will be pennies if anything.
 1. **+Create** a Key Vault. Assign the appropriate Subscription and Resource Group.
 2. The **Name** must be unique to Azure. Suggested Name "{yourcompanyname}powerbiapi".
