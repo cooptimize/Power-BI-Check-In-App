@@ -4,7 +4,7 @@ The Power BI Checkin Power App expedites publishing Power BI content, deploying 
 <img width="1514" alt="image" src="https://user-images.githubusercontent.com/105446443/197231484-1cc0070d-6dd1-4fd2-bcd2-d3902282862a.png">
 
 ## Inside Power BI Desktop
-The best part of this App is it sits inside Power BI Desktop - right where you are authoring Reports or Data Models. When you are finished making changes, you don't need to login somewhere else to document what changed.
+The best part of this App is it sits inside Power BI Desktop - right where you are authoring Reports or Data Models. When you are finished making changes, the Documentation and Publishing experience is sitting in front of you.
 
 You can also view the Change History inside the .pbix file.
 
