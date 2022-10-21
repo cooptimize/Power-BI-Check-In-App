@@ -13,6 +13,7 @@ You will need help from a Tenant Admin to get the App installed. The following c
 | App Registration | Access to the Power BI API | Azure Active Directory |
 | Register Provider for Azure Subscription | Needed for Power App to retreive the Key Vault | Subscription Owner |
 | Create Azure Key Vault | Stores the Secret from the App Registration | Azure Resource Group Owner or Azure Administrator |
+| (Optional) Azure AD Group | To manage API and App Access | Azure Active Directory |
 | Install Power App | App and Power Automate components | Power App Environment System Administrator |
 
 # Installation Steps
@@ -51,6 +52,32 @@ The App Registration allows Power Automate to use the Power BI API. Giving acces
 
 ## Register Provider for Azure Subscription
 https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
-The Power Apps provider is off by default on an Azure Subscription. It needs to be on for the Subscription the Key Vault will use.
+The Power Apps provider is off by default on an Azure Subscription. It needs to be on for the Subscription the Key Vault will use. This allows a Power App to communicate with a Key Vault.
 
-1. 
+1. Click on **Resource providers** then **Filter by name...** "Microsoft.PowerPlatform". **Register**
+
+## Create Azure Key Vault
+https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults
+A Key Vault allows a User to to retreive a secret without knowing the secret. Key Vaults may incur Azure Fees - for this App it will be pennies if anything.
+1. **+Create** a Key Vault. Assign the appropriate Subscription and Resource Group.
+2. The **Name** must be unique to Azure. Suggested Name "{yourcompanyname}powerbiapi".
+3. Open the Key Vault once Azure has provisioned it.
+4. Navigate to **Secrets** and **+Generate/Import**. **Name** is "PowerBIAPI" and the Secret is pasted from the App Registration step.
+5. Navigate to **Access policies** and **+Create**.
+6. Users need **Secret > Get** permissions to retreive the secret.
+
+## Send Information to the Power BI App Installer
+The person installing the app needs to know some values from Azure.
+
+**App Registration**
+* Application (client) ID
+* Directory (tenant) ID
+
+**Azure Key Vault**
+* Key Vault Name (eg {yourcompanyname}powerbiapi)
+* Resource Group Name
+* Subscription Id
+* Secret Name (eg "PowerBIAPI")
+
+## (Optional) Azure AD Group
+
