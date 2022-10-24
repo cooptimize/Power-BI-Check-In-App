@@ -116,9 +116,19 @@ Group Assignments:
 * Power App - App level permissions
 * (Optional) Power BI Workspaces and Pipelines (Member level)
 
-## Power App Installation
+# Power App Installation
 https://make.powerapps.com/environments
 
-1. Navigate to the Power Apps Authoring site (https://make.powerapps.com/environments).
-2. At the very top of the page is an **Environment** selector. Select the Power BI App Environment.
-3. Navigate to **Solutions** and **Import**.
+## Managed vs Unmanaged
+We recommend testing the functionality of the app using the managed solution. Managed solutions make it possible to install future updates and fixes. Installing the unmanaged solution means future updates won't be possible - effectively branching the code to your own version.
+
+If you like some components of the app, but don't want to 
+
+## Install the App
+
+1. Download the Managed solution from GitHub.
+2. Navigate to the Power Apps Authoring site (https://make.powerapps.com/environments).
+3. At the very top of the page is an **Environment** selector. Select the Power BI App Environment.
+4. Navigate to **Solutions** and **Import**.
+5. 
+6. You'll be prompted to create new Connections.
