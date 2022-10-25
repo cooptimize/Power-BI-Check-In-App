@@ -78,6 +78,9 @@ The Power Apps provider is off by default on an Azure Subscription. It needs to 
 
 1. Click on **Resource providers** then **Filter by name...** "Microsoft.PowerPlatform". **Register**
 
+<img width="1511" alt="image" src="https://user-images.githubusercontent.com/105446443/197890385-b48bd2fe-8c99-4300-af42-82450210ac85.png">
+
+
 ## Create Azure Key Vault
 https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults
 
