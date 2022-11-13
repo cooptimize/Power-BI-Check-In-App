@@ -9,7 +9,7 @@ The best part of this App is it sits inside Power BI Desktop - right where you a
 You can also view the Change History inside the .pbix file.
 
 ## Tie SharePoint File to Workspace
-One of the annoying parts of the existing Power BI Publishing experience is constantly having to select the Workspace to Publish to. We can get around that annoyance by putting the Workspace Id as the SharePoint Title field. We use this link to automate the Publish process.
+One of the annoying parts of the existing Power BI Publishing experience is constantly having to select the Workspace to Publish to. We can get around that annoyance by putting the Workspace Id as the SharePoint Title field. Having a link between File and Workspace means the ongoing Publish process is simplified.
 
 ## Simplify Pipelines
 Pipelines are a great way to be able to Test changes before they are promoted to Production. However, this has an unwanted side effect - making a quick change to a Report or Measure can be overly cumbersome. The Power BI App solves this by optionally automating Pipeline promotion steps.
