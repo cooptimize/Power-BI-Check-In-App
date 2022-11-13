@@ -115,10 +115,10 @@ If you like some components of the app, but don't want to
 # PowerBI.com
 The App Registration "user" needs to have Member or Admin access to all Workspaces and Pipelines you will publish to.
 
-# Power BI Data Model
-Your Published Dataset has to contain a list of SharePoint files. The simplest method to accomplish this is to add a hidden table to the model.
+# Power BI Data Model SharePoint List
+Your Published Dataset has to contain a list of the .pbix SharePoint files. The simplest method to accomplish this is to add a hidden table to the model.
 
-Add the following Power Query (plus any custom filters) to your model in Power BI Desktop:
+Add the following Power Query (plus any custom filters) to your model(s) in Power BI Desktop:
 
 ```
 let
@@ -134,3 +134,20 @@ in
 ```
 
 Remember when publishing this file to Edit Connections in the dataset to autorize the SharePoint connection.
+
+One the App is integrated with the Dataset file, hide this table in the model.
+
+# Integrating the App
+1. In Power BI Desktop, add the Power App visual.
+2. Select the Environment in which the App is installed.
+3. Select the App.
+4. Pull the SharePoint List fields Name, SharePoint Id, and Web URL into the App Fields List.
+5. In the Filter, select the File Name of the File you are currently in. This is how the App is able to link the Power BI Desktop file.
+
+<img width="579" alt="image" src="https://user-images.githubusercontent.com/105446443/201535897-831a8e82-5bc5-4e27-9846-963dc9d3ce7b.png">
+
+# SharePoint Title
+In Teams or SharePoint, edit the SharePoint Title field. Set this to the PowerBI.com Workspace Id (00000000-0000-0000-0000-000000000000). This is how the file is linked to the Workspace it's published in.
+
+# First Publish
+The first Report or Dataset Publish has to be done through the Power BI Desktop UI.
