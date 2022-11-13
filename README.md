@@ -21,3 +21,6 @@ The App checks if a Dataset is published but a Report with the same name is not 
 
 ## Links to PowerBI.com
 Within the .pbix file, we know 1) the File Name and 2) the Workspace Id. From these two data points the App can retreive other Metadata. The App has direct links to the Workspace, Pipeline, Dataset, and Report. These links mean you can quickly view content after publishing.
+
+[Installation Steps](INSTALLATION.md)
+[Managed App File](pbiapp_PowerBICheckinApp.zip)
