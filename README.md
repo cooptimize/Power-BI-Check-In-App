@@ -133,5 +133,28 @@ If you like some components of the app, but don't want to
 2. Navigate to the Power Apps Authoring site (https://make.powerapps.com/environments).
 3. At the very top of the page is an **Environment** selector. Select the Power BI App Environment.
 4. Navigate to **Solutions** and **Import**.
-5. 
+5. **Browse** for the Solution available on GitHub.
 6. You'll be prompted to create new Connections.
+
+# PowerBI.com
+The App Registration "user" needs to have Member or Admin access to all Workspaces and Pipelines you will publish to.
+
+# Power BI Data Model
+Your Published Dataset has to contain a list of SharePoint files. The simplest method to accomplish this is to add a hidden table to the model.
+
+Add the following Power Query (plus any custom filters) to your model in Power BI Desktop:
+
+```
+let
+    Source = SharePoint.Tables("https://cooptimizes.sharepoint.com/sites/PowerBIFilesandLists", [ApiVersion = 15]),
+    #"fa0b5bfd-c2e1-4bec-9ad6-8e684eb2ecc5" = Source{[Title="Documents"]}[Items],
+    #"Removed Other Columns" = Table.SelectColumns(#"fa0b5bfd-c2e1-4bec-9ad6-8e684eb2ecc5",{"Id", "Title", "File"}),
+    #"Expanded File" = Table.ExpandRecordColumn(#"Removed Other Columns", "File", {"Name", "ServerRelativeUrl"}, {"Name", "Web URL"}),
+    #"Filtered .pbix Files" = Table.SelectRows(#"Expanded File", each Text.EndsWith([Name], ".pbix")),
+    #"Renamed Columns" = Table.RenameColumns(#"Filtered .pbix Files",{{"Id", "SharePoint Id"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"SharePoint Id", Int64.Type}})
+in
+    #"Changed Type"
+```
+
+Remember when publishing this file to Edit Connections in the dataset to autorize the SharePoint connection.
