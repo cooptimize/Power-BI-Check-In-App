@@ -24,4 +24,4 @@ Within the .pbix file, we know 1) the File Name and 2) the Workspace Id. From th
 
 [Installation Steps](INSTALLATION.md)
 
-[Managed App File](pbiapp_PowerBICheckinApp.zip)
+[Managed App Download](pbiapp_PowerBICheckinApp.zip)
